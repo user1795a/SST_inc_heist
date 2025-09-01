@@ -6,16 +6,15 @@
 //
 
 import SwiftUI
-
+import SwiftPersistence
+struct State: Encodable, Decodable{
+}
 struct ContentView: View {
+    @Persistent("State") var appstate = State()
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack{
+            
         }
-        .padding()
     }
 }
 
