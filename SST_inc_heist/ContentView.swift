@@ -7,10 +7,10 @@
 
 import SwiftUI
 import SwiftPersistence
-struct State: Encodable, Decodable{
+struct Appstate{
 }
 struct ContentView: View {
-    @Persistent("State") var appstate = State()
+    @Binding var appstate : Appstate
     var body: some View {
         NavigationStack{
             
@@ -19,5 +19,6 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    @Previewable @State var appstate = Appstate()
+    ContentView(appstate: $appstate)
 }
