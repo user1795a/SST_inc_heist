@@ -12,7 +12,11 @@ struct ContentView: View {
     @Binding var appstate : Appstate
     var body: some View {
         NavigationStack{
-            
+            TabView{
+                Tab("notebook",systemImage: "book.closed.fill"){
+                    Notebookview(appstate: $appstate)
+                }
+            }
         }
     }
 }

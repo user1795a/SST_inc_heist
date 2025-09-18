@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6C7754532E7C0E150052A244 /* Notebookview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7754522E7C0E150052A244 /* Notebookview.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		6C6B48A82E65882B007A0391 /* SST_inc_heist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SST_inc_heist.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C7754522E7C0E150052A244 /* Notebookview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notebookview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +37,7 @@
 		6C6B489F2E65882B007A0391 = {
 			isa = PBXGroup;
 			children = (
+				6C7754522E7C0E150052A244 /* Notebookview.swift */,
 				6C6B48AA2E65882B007A0391 /* SST_inc_heist */,
 				6C6B48A92E65882B007A0391 /* Products */,
 			);
@@ -119,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C7754532E7C0E150052A244 /* Notebookview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
