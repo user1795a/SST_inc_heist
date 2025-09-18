@@ -9,6 +9,7 @@ import SwiftUI
 struct Appstate{
     var inventoryItems: Array<String>;
     var notes: String = "If E=mc^2 does that mean mc^2 = E?\nthis text is a placeholder";
+    var solvedPuzzles: Array<Int>;
 }
 struct ContentView: View {
     @Binding var appstate : Appstate
@@ -24,6 +25,6 @@ struct ContentView: View {
 }
 
 #Preview {
-    @Previewable @State var appstate = Appstate(inventoryItems: [])
+    @Previewable @State var appstate = Appstate(inventoryItems: [], solvedPuzzles: [])
     ContentView(appstate: $appstate)
 }
