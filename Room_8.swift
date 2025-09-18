@@ -26,6 +26,7 @@ struct Room_8: View {
                     Text("Investigate")
                 }
             }
+            Text("Across the room, you see ***(=room4)")
         }
     }
 }

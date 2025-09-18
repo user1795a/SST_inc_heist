@@ -12,6 +12,7 @@
 		6CC4CA5F2E7C386B00761F2D /* Room_8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC4CA5E2E7C386B00761F2D /* Room_8.swift */; };
 		6CC4CA612E7C3E5D00761F2D /* Puzzle_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC4CA602E7C3E5D00761F2D /* Puzzle_2.swift */; };
 		6CC4CA632E7C3EDC00761F2D /* Room_16.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC4CA622E7C3EDC00761F2D /* Room_16.swift */; };
+		6CC4CA652E7C47FE00761F2D /* Room_4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC4CA642E7C47FE00761F2D /* Room_4.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		6CC4CA5E2E7C386B00761F2D /* Room_8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room_8.swift; sourceTree = "<group>"; };
 		6CC4CA602E7C3E5D00761F2D /* Puzzle_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle_2.swift; sourceTree = "<group>"; };
 		6CC4CA622E7C3EDC00761F2D /* Room_16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room_16.swift; sourceTree = "<group>"; };
+		6CC4CA642E7C47FE00761F2D /* Room_4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room_4.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -46,6 +48,7 @@
 			isa = PBXGroup;
 			children = (
 				6CC4CA5E2E7C386B00761F2D /* Room_8.swift */,
+				6CC4CA642E7C47FE00761F2D /* Room_4.swift */,
 				6CC4CA622E7C3EDC00761F2D /* Room_16.swift */,
 				6CC4CA602E7C3E5D00761F2D /* Puzzle_2.swift */,
 				6C7754542E7C103B0052A244 /* Room_7.swift */,
@@ -142,6 +145,7 @@
 				6C7754532E7C0E150052A244 /* Notebookview.swift in Sources */,
 				6CC4CA5F2E7C386B00761F2D /* Room_8.swift in Sources */,
 				6C7754552E7C103B0052A244 /* Room_7.swift in Sources */,
+				6CC4CA652E7C47FE00761F2D /* Room_4.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
