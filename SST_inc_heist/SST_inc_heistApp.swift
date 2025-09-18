@@ -11,7 +11,7 @@ import SwiftUI
 struct SST_inc_heistApp: App {
     var body: some Scene {
         WindowGroup {
-            @State var appstate = Appstate()
+            @State var appstate = Appstate(inventoryItems: [])
             ContentView(appstate: $appstate)
         }
     }
