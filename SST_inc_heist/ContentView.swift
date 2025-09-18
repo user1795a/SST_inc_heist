@@ -8,6 +8,7 @@
 import SwiftUI
 struct Appstate{
     var inventoryItems: Array<String>;
+    var notes: String = "If E=mc^2 does that mean mc^2 = E?\nthis text is a placeholder";
 }
 struct ContentView: View {
     @Binding var appstate : Appstate
