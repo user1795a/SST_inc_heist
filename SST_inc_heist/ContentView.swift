@@ -28,7 +28,7 @@ struct ContentView: View {
                     }
                 }
                 Tab("Home",systemImage: "house"){
-                    ContentView(appstate: $appstate)
+                    Room_1(appstate: $appstate)
                     var bookimg = 0
                 }
             }
