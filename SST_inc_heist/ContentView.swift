@@ -8,6 +8,7 @@
 import SwiftUI
 struct Appstate{
     var inventoryItems: Array<String>;
+    var solvedPuzzles: Array<Int>;
 }
 struct ContentView: View {
     @Binding var appstate : Appstate
@@ -36,7 +37,7 @@ struct ContentView: View {
 }
 
 #Preview {
-    @Previewable @State var appstate = Appstate(inventoryItems: [])
+    @Previewable @State var appstate = Appstate(inventoryItems: [], solvedPuzzles: [])
     ContentView(appstate: $appstate)
 }
 
