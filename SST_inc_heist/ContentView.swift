@@ -9,6 +9,7 @@ import SwiftUI
 struct Appstate{
     var inventoryItems: Array<String>;
     var solvedPuzzles: Array<Int>;
+    var notebooktext: String;
 }
 struct ContentView: View {
     @Binding var appstate : Appstate
@@ -27,17 +28,24 @@ struct ContentView: View {
                         Notebookview(appstate: $appstate)
                     }
                 }
+                Tab("Inventory",systemImage: "house"){
+                    InventoryView(appstate: $appstate)
+                    var bookimg = 0
+                }
                 Tab("Home",systemImage: "house"){
                     Room_1(appstate: $appstate)
                     var bookimg = 0
                 }
+                
+                //Ethan can you help me change the icon
+                //and also figure out how the frame in Notebookview works
             }
         }
     }
 }
 
 #Preview {
-    @Previewable @State var appstate = Appstate(inventoryItems: [], solvedPuzzles: [])
+    @Previewable @State var appstate = Appstate(inventoryItems: [], solvedPuzzles: [], notebooktext: "")
     ContentView(appstate: $appstate)
 }
 

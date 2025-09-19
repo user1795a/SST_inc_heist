@@ -10,8 +10,8 @@ import SwiftUI
 struct Notebookview: View {
     @Binding var appstate : Appstate
     var body: some View {
-//        @State var notes : String = appstate.notes
-//        Text(appstate.notes)
+        TextEditor(text:$appstate.notebooktext)
+            .frame(width: .infinity, height: .infinity)
     }
 }
 

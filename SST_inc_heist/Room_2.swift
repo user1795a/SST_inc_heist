@@ -16,6 +16,6 @@ struct Room_2: View {
 }
 
 #Preview {
-    @Previewable @State var appstate = Appstate(inventoryItems: [], solvedPuzzles: [])
+    @Previewable @State var appstate = Appstate(inventoryItems: [], solvedPuzzles: [], notebooktext: "")
     Room_2(appstate: $appstate)
 }

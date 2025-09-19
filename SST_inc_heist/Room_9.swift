@@ -9,14 +9,29 @@ import SwiftUI
 
 struct Room_9: View {
     @Binding var appstate : Appstate
+    @State var showconfirmation : Bool = false
     var body: some View {
         NavigationStack{
-            Text("in the locked room, you find a flashlight")
-            if (!appstate.inventoryItems.contains("flashlight")){
+           Text("You find a piece of paper. It says: 3 from the top and 5 form the bottom")
+            if (showconfirmation){
+                
+                
                 Button{
-                    appstate.inventoryItems.append("flashlight")
+                    showconfirmation.toggle()
                 }label: {
-                    Text("add to inventory")
+                    HStack{
+                        Text("Added to notepad")
+                        Text("×")
+                            .foregroundStyle(.gray)
+                    }
+                    .background(Color.green)
+                }
+            }else{
+                Button{
+                    appstate.notebooktext += "3 from the top and 5 form the bottom\n"
+                    showconfirmation.toggle()
+                }label: {
+                    Text("Add to notepad")
                 }
             }
             NavigationLink{
@@ -30,6 +45,6 @@ struct Room_9: View {
 }
 
 #Preview {
-    @Previewable @State var appstate = Appstate(inventoryItems: [], solvedPuzzles: [])
+    @Previewable @State var appstate = Appstate(inventoryItems: [], solvedPuzzles: [], notebooktext: "")
     Room_9(appstate: $appstate)
 }
