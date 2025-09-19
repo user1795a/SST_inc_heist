@@ -1,2 +1,2 @@
-hi
-congrats i know where you live because i have a code to track down people's ip and since you came here, now i know where you live
+This repository is for the final project in SST Inc year one.
+It is a detective-style puzzle game where your goal is to **??**
