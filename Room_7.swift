@@ -58,6 +58,7 @@ struct Room_7: View {
     }
 }
 
-//#Preview {
-//    Room_7()
-//}
+#Preview {
+    @Previewable @State var appstate = Appstate(inventoryItems: [], solvedPuzzles: [])
+    Room_7(appstate: $appstate)
+}
