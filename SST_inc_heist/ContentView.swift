@@ -8,16 +8,27 @@
 import SwiftUI
 struct Appstate{
     var inventoryItems: Array<String>;
-    var notes: String = "If E=mc^2 does that mean mc^2 = E?\nthis text is a placeholder";
-    var solvedPuzzles: Array<Int>;
 }
 struct ContentView: View {
     @Binding var appstate : Appstate
+    @State var bookimg : Int = 0
+    @State var notebookimg : String = ""
     var body: some View {
         NavigationStack{
             TabView{
-                Tab("notebook",systemImage: "book.closed.fill"){
-                    Notebookview(appstate: $appstate)
+                if (bookimg) == 0{
+                    Tab("notebook",systemImage: "book.closed.fill"){
+                        Notebookview(appstate: $appstate)
+                        var bookimg = 1
+                    }
+                } else if (bookimg) == 1{
+                    Tab("notebook",systemImage: "book.fill"){
+                        Notebookview(appstate: $appstate)
+                    }
+                }
+                Tab("Home",systemImage: "house"){
+                    ContentView(appstate: $appstate)
+                    var bookimg = 0
                 }
             }
         }
@@ -25,6 +36,7 @@ struct ContentView: View {
 }
 
 #Preview {
-    @Previewable @State var appstate = Appstate(inventoryItems: [], solvedPuzzles: [])
+    @Previewable @State var appstate = Appstate(inventoryItems: [])
     ContentView(appstate: $appstate)
 }
+
