@@ -19,7 +19,7 @@ struct Puzzle_2: View {
     
     var body: some View {
         VStack(spacing: 30) {
-            if appstate.solvedPuzzles.contains(5) {
+            if appstate.solvedPuzzles.contains(2) {
                 Text("Puzzle solved; click back")
             } else {
                 Text("What is this word:")
@@ -30,7 +30,7 @@ struct Puzzle_2: View {
                 
                 Button("submit") {
                     if guess.lowercased() == word {
-                        appstate.solvedPuzzles.append(5)
+                        appstate.solvedPuzzles.append(2)
                     } else {
                         wrongAlert = true
                     }
