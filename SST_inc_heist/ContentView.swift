@@ -10,6 +10,7 @@ struct Appstate{
     var inventoryItems: Array<String>;
     var solvedPuzzles: Array<Int>;
     var notebooktext: String;
+    var notebookfound: Bool = false;
 }
 struct ContentView: View {
     @Binding var appstate : Appstate
@@ -18,14 +19,16 @@ struct ContentView: View {
     var body: some View {
         NavigationStack{
             TabView{
-                if (bookimg) == 0{
-                    Tab("notebook",systemImage: "book.closed.fill"){
-                        Notebookview(appstate: $appstate)
-                        var bookimg = 1
-                    }
-                } else if (bookimg) == 1{
-                    Tab("notebook",systemImage: "book.fill"){
-                        Notebookview(appstate: $appstate)
+                if (appstate.notebookfound){
+                    if (bookimg) == 0{
+                        Tab("notebook",systemImage: "book.closed.fill"){
+                            Notebookview(appstate: $appstate)
+                            var bookimg = 1
+                        }
+                    } else if (bookimg) == 1{
+                        Tab("notebook",systemImage: "book.fill"){
+                            Notebookview(appstate: $appstate)
+                        }
                     }
                 }
                 Tab("Inventory",systemImage: "house"){

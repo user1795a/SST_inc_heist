@@ -28,7 +28,7 @@ struct Room_9: View {
                 }
             }else{
                 Button{
-                    appstate.notebooktext += "3 from the top and 5 form the bottom\n"
+                    appstate.notebooktext += "3 from the top and 5 from the left\n"
                     showconfirmation.toggle()
                 }label: {
                     Text("Add to notepad")

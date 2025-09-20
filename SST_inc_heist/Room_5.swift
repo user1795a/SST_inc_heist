@@ -6,6 +6,7 @@ struct Room_5: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
         //when creating, update room 10
+        //when creating, update room 2
     }
 }
 

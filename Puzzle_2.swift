@@ -11,6 +11,7 @@ struct Puzzle_2: View {
     @Binding var appstate : Appstate
     var body: some View {
         Text("insert puzzle here")
+        
         //Update room 8 on complete (for narrative)
     }
 }

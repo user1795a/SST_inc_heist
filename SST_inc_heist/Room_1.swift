@@ -4,7 +4,28 @@ import SwiftUI
 struct Room_1: View {
     @Binding var appstate : Appstate
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            VStack{
+                Text("As you enter the Bulding, you notice the lobby contains just 2 things: a door and a desk. There is also a small notebook on the floor")
+                NavigationLink{
+                    Room_2(appstate: $appstate)
+                }label: {
+                    Text("Investigate office desk")
+                }
+                NavigationLink{
+                    Room_3(appstate: $appstate)
+                }label: {
+                    Text("Walk through the door")
+                }
+                if (!appstate.notebookfound){
+                    Button{
+                        appstate.notebookfound = true
+                    }label:{
+                        Text("pick up notebook")
+                    }
+                }
+            }
+        }
     }
 }
 
