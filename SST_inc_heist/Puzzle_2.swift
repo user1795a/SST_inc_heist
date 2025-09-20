@@ -1,25 +1,52 @@
-//
-//  Puzzle_2.swift
-//  SST_inc_heist
-//
-//  Created by Wang Yuzhi Ryan on 18/9/25.
-//
-
 import SwiftUI
 
 struct Puzzle_2: View {
-    @Binding var appstate : Appstate
-    var body: some View {
-        Text("insert puzzle here")
-        Button{
-            appstate.solvedPuzzles.append(2)
-        }label: {
-            Text("Simulate solve")
+    @Binding var appstate: Appstate
+    @State private var guess = ""
+    @State private var wrongAlert = false
+    let word = "red herring"
+    var messyWord: some View {
+        HStack(spacing: 0) {
+            ForEach(Array(word), id: \.self) { letter in
+                Text(String(letter))
+                    .font(.system(size: 36, weight: .bold, design: .serif))
+                    .rotationEffect(.degrees(Double.random(in: -20...20)))
+                    .offset(x: CGFloat.random(in: -5...5), y: CGFloat.random(in: -5...5))
+                    .blur(radius: Double.random(in: 0...2))
+            }
         }
-        //Update room 8 on complete (for narrative)
+    }
+    
+    var body: some View {
+        VStack(spacing: 30) {
+            if appstate.solvedPuzzles.contains(5) {
+                Text("Puzzle solved; click back")
+            } else {
+                Text("What is this word:")
+                messyWord
+                
+                TextField("", text: $guess)
+                    .background(.gray)
+                
+                Button("submit") {
+                    if guess.lowercased() == word {
+                        appstate.solvedPuzzles.append(5)
+                    } else {
+                        wrongAlert = true
+                    }
+                }
+            }
+        }
+        .alert("Incorrect", isPresented: $wrongAlert) {
+            Button("OK") {
+                guess = ""
+                wrongAlert = false
+            }
+        }
     }
 }
-//
-//#Preview {
-//    Puzzle_2()
-//}
+
+#Preview {
+    @Previewable @State var appstate = Appstate(inventoryItems: [], solvedPuzzles: [], notebooktext: "")
+    Puzzle_2(appstate: $appstate)
+}
