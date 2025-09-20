@@ -12,7 +12,7 @@ struct Room_9: View {
     @State var showconfirmation : Bool = false
     var body: some View {
         NavigationStack{
-           Text("You find a piece of paper. It says: 3 from the top and 5 form the bottom")
+           Text("You find a piece of paper. It says: 3 from the top and 5 form the left")
             if (showconfirmation){
                 
                 

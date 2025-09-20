@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Room_3: View {
     @Binding var appstate : Appstate
+    @State var n:Int = 0
     var body: some View {
         NavigationStack{
             VStack{
@@ -20,9 +21,18 @@ struct Room_3: View {
                 }label: {
                     Text("Enter bedroom")
                 }
+                if (appstate.hiddenfound){
+                    NavigationLink{
+                        Room_4(appstate: $appstate)
+                    }label:{
+                        Text("Go back to bookshelf")
+                    }
+                }
                 Button{
-                    //SOMEONE ADD A SECRET HERE
-                    //WHY IS NO ONE DOING THEIR WORK - ryan
+                    n+=1
+                    if (n==3){
+                        appstate.hiddenfound = true
+                    }
                 }label: {
                     Text("Investigate")
                 }

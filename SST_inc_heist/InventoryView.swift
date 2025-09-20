@@ -5,9 +5,12 @@ struct InventoryView: View {
     @Binding var appstate : Appstate
     var body: some View {
         VStack {
-            ForEach(appstate.inventoryItems, id: \.self){ item in
-                Text(item)
+            List{
+                ForEach(appstate.inventoryItems, id: \.self){ item in
+                    Text(item)
+                }
             }
+           
         }
         
     }

@@ -26,7 +26,7 @@ struct Room_7: View {
     var body: some View {
         NavigationStack{
             VStack{
-                Text("You enter the bedroom.")
+                Text("You enter the bedroom.\nThere is a safe.")
                 if(appstate.safeunlocked){
                     NavigationLink{
                         Room_8(appstate: $appstate)
