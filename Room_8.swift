@@ -16,7 +16,7 @@ struct Room_8: View {
                 NavigationLink{
                     Room_16(appstate: $appstate)
                 }label: {
-                    Text("go to 16")
+                    Text("go to bedroom 2")
                 }
             }else{
                 Text("The safe contains (puzzle2mechanic)")

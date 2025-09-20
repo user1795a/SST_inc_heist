@@ -4,7 +4,7 @@
 //
 //  Created by Wang Yuzhi Ryan on 18/9/25.
 //
-
+//this is the bedroom
 import SwiftUI
 import Foundation
 import CryptoKit
@@ -26,11 +26,12 @@ struct Room_7: View {
     @State var wrongAlert: Bool = false;
     var body: some View {
         NavigationStack{
+            Text("You enter the bedroom.")
             if(unlocked){
                 NavigationLink{
                     Room_8(appstate: $appstate)
                 }label: {
-                    Text("Go to room 8")
+                    Text("Open the safe")
                 }
             } else {
                 TextField("password", text: $attempt)
