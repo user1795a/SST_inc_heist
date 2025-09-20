@@ -3,13 +3,35 @@ import SwiftUI
 
 struct Puzzle_5: View {
     @Binding var appstate : Appstate
+    @State var guess:String = ""
+    @State var alertShown: Bool = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-        Button{
-            appstate.solvedPuzzles.append(5)
-        }label: {
-            Text("Simulate solve")
+        NavigationStack{
+            if (appstate.solvedPuzzles.contains(5)){
+                Text("solved")
+            }else{
+                Link("-", destination: URL(string: "https://sites.google.com/s2025.ssts.edu.sg/bv-f/home")!)
+                TextField("guess", text: $guess)
+                    .frame(width: .infinity)
+                Button{
+                    if (guess.lowercased() == "not here"){
+                        appstate.solvedPuzzles.append(5)
+                    }else{
+                        alertShown.toggle()
+                    }
+                }label: {
+                    Text("guess")
+                }
+            }
         }
+            .alert("Incorrect", isPresented: $alertShown){
+                Button{
+                    guess=""
+                    alertShown.toggle()
+                }label: {
+                    Text("OK")
+                }
+            }
     }
 }
 

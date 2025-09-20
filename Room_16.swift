@@ -12,7 +12,7 @@ struct Room_16: View {
     var body: some View {
         NavigationStack{
             VStack{
-                if(appstate.solvedPuzzles.contains(6)){
+                if(!appstate.solvedPuzzles.contains(6)){
                    Text("The door to the exit is locked")
                     NavigationLink{
                         Puzzle_6(appstate: $appstate)
