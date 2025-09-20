@@ -23,6 +23,7 @@ struct Puzzle_3: View {
                 HStack{
                     VStack{
                         Text("lower")
+                        Text("0")
                         Text(lowern)
                     }
                     VStack{
@@ -44,6 +45,7 @@ struct Puzzle_3: View {
                     }
                     VStack{
                         Text("higher")
+                        Text("101")
                         Text(uppern)
                     }
                 }
