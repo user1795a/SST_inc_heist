@@ -9,33 +9,23 @@ import SwiftUI
 
 struct Room_3: View {
     @Binding var appstate : Appstate
-    @State var n:Int = 0
     var body: some View {
         NavigationStack{
             VStack{
                 Text("As you enter the building, you feel that something's wrong")
-                Text("You brush it off as your imagination")
+                NavigationLink{
+                    Room_4(appstate: $appstate)
+                }label: {
+                    Text("You brush it off as your imagination")
+                        .foregroundStyle(.black)
+                }
                 //Update room 9 on complete (for narrative)
                 NavigationLink{
                     Room_7(appstate: $appstate)
                 }label: {
                     Text("Enter bedroom")
                 }
-                if (appstate.hiddenfound){
-                    NavigationLink{
-                        Room_4(appstate: $appstate)
-                    }label:{
-                        Text("Go back to bookshelf")
-                    }
-                }
-                Button{
-                    n+=1
-                    if (n==3){
-                        appstate.hiddenfound = true
-                    }
-                }label: {
-                    Text("Investigate")
-                }
+                
             }
         }
     }

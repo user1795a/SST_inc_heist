@@ -13,7 +13,6 @@ struct Appstate{
     var notebookfound: Bool = false;
     var onreturntrip: Bool = false;
     var safeunlocked:Bool = false;
-    var hiddenfound:Bool = false;
 }
 struct ContentView: View {
 //    @Binding var appstate : Appstate
