@@ -4,6 +4,7 @@ import SwiftUI
 struct Puzzle_4: View {
     @Binding var appstate : Appstate
     @State var guess = ""
+    @State var wrongAlert : Bool = false
     var body: some View {
         VStack{
             if (appstate.solvedPuzzles.contains(4)){
@@ -15,10 +16,20 @@ struct Puzzle_4: View {
                 Button{
                     if (guess.lowercased() == "ch4n93m3"){
                         appstate.solvedPuzzles.append(4)
+                    }else{
+                        wrongAlert.toggle()
                     }
                 }label: {
                     Text("Log in")
                 }
+            }
+        }
+        .alert(Text("Wrong password!"), isPresented: $wrongAlert){
+            Button{
+                guess = ""
+                wrongAlert = false
+            }label: {
+                Text("OK")
             }
         }
     }
