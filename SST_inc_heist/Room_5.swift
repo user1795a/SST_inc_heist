@@ -1,12 +1,23 @@
-
+//this room is a bedroom a
 import SwiftUI
 
 struct Room_5: View {
     @Binding var appstate : Appstate
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-        //when creating, update room 10
-        //when creating, update room 2
+        NavigationStack{
+            VStack{
+                NavigationLink{
+                    Room_11(appstate: $appstate)
+                }label: {
+                    Text("enter door")
+                }
+                NavigationLink{
+                    Room_10(appstate: $appstate)
+                }label: {
+                    Text("Investigate box")
+                }
+            }
+        }
     }
 }
 

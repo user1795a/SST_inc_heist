@@ -13,18 +13,18 @@ struct Room_16: View {
         NavigationStack{
             VStack{
                 if(appstate.solvedPuzzles.contains(6)){
-                   Text("The door to the other bedroom is locked")
+                   Text("The door to the exit is locked")
                     NavigationLink{
                         Puzzle_6(appstate: $appstate)
                     }label: {
                         Text("attempt puzzle")
                     }
                 }else{
-                    Text("The door to the other bedroom is no longer locked")
+                    Text("The door to the other exit is no longer locked")
                     NavigationLink{
-                        Room_4(appstate: $appstate)
+                        Room_1(appstate: $appstate)
                     }label: {
-                        Text("goto 17")
+                        Text("go to exit")
                     }
                 }
             }

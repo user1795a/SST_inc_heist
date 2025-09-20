@@ -35,6 +35,7 @@ struct Room_14: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

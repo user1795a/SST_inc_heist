@@ -1,4 +1,4 @@
-
+//room is the balcony
 import SwiftUI
 
 struct Room_12: View {
@@ -29,7 +29,7 @@ struct Room_12: View {
             NavigationLink{
                 Room_6(appstate: $appstate)
             }label: {
-                Text("Goto room6 [update]")
+                Text("Go to bathroom")
             }
         }
     }

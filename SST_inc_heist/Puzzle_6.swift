@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct Puzzle_3: View {
+struct Puzzle_6: View {
     @Binding var appstate : Appstate
     var body: some View {
         Text("insert puzzle here")
         Button{
-            appstate.solvedPuzzles.append(3)
+            appstate.solvedPuzzles.append(6)
         }label: {
             Text("Simulate solve")
         }

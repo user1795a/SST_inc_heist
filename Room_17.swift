@@ -16,7 +16,7 @@ struct Room_17: View {
                 NavigationLink{
                     Room_4(appstate: $appstate)
                 }label: {
-                    Text("continue to room 4")
+                    Text("Go to bookshelf")
                 }
             }
         }

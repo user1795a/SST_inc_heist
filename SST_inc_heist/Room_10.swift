@@ -1,30 +1,32 @@
 
 import SwiftUI
-
+//is a box
 struct Room_10: View {
     @Binding var appstate : Appstate
     var body: some View {
         NavigationStack {
-            if (appstate.inventoryItems.contains("key") && appstate.inventoryItems.contains("warrant")){
-                NavigationLink{
-                    Room_9(appstate: $appstate)
-                }label: {
+            VStack{
+                if (appstate.inventoryItems.contains("key") && appstate.inventoryItems.contains("warrant")){
+                    NavigationLink{
+                        Room_9(appstate: $appstate)
+                    }label: {
+                        Text("enter the locked room (key and warrant required)")
+                            .foregroundStyle(.green)
+                    }
+                } else {
                     Text("enter the locked room (key and warrant required)")
-                        .foregroundStyle(.green)
+                        .foregroundStyle(.red)
                 }
-            } else {
-                Text("enter the locked room (key and warrant required)")
-                    .foregroundStyle(.red)
-            }
-            NavigationLink{
-                Room_5(appstate: $appstate)
-            }label: {
-                Text("Go to room 5 [update]")
-            }
-            NavigationLink{
-                Room_6(appstate: $appstate)
-            }label: {
-                Text("Go to room 6 [update]")
+                NavigationLink{
+                    Room_5(appstate: $appstate)
+                }label: {
+                    Text("zoom out to bedroom a")
+                }
+                NavigationLink{
+                    Room_6(appstate: $appstate)
+                }label: {
+                    Text("Go to bathroom")
+                }
             }
         }
     }

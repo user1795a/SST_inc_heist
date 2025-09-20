@@ -21,29 +21,35 @@ func hash(_ input: String) -> String{ //hex because i can evaluate in terminal
 
 struct Room_7: View {
     @Binding var appstate : Appstate
-    @State var unlocked: Bool = false;
     @State var attempt: String = "";
     @State var wrongAlert: Bool = false;
     var body: some View {
         NavigationStack{
-            Text("You enter the bedroom.")
-            if(unlocked){
-                NavigationLink{
-                    Room_8(appstate: $appstate)
-                }label: {
-                    Text("Open the safe")
-                }
-            } else {
-                TextField("password", text: $attempt)
-                    .frame(width: .infinity)
-                Button{
-                    if (hash(attempt) == "80cb57ab9f40442c1ff7a9c541d65741288860e86758789403f33bcee9a8716d"){
-                        unlocked = true
-                    } else {
-                        wrongAlert = true;
+            VStack{
+                Text("You enter the bedroom.")
+                if(appstate.safeunlocked){
+                    NavigationLink{
+                        Room_8(appstate: $appstate)
+                    }label: {
+                        Text("Open the safe")
                     }
+                } else {
+                    TextField("password", text: $attempt)
+                        .frame(width: .infinity)
+                    Button{
+                        if (hash(attempt) == "80cb57ab9f40442c1ff7a9c541d65741288860e86758789403f33bcee9a8716d"){
+                            appstate.safeunlocked = true
+                        } else {
+                            wrongAlert = true;
+                        }
+                    }label: {
+                        Text("Attempt password")
+                    }
+                }
+                NavigationLink{
+                    Room_14(appstate: $appstate)
                 }label: {
-                    Text("Attempt password")
+                    Text("go through door")
                 }
             }
             

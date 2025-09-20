@@ -20,12 +20,12 @@ struct Room_2: View {
                 NavigationLink{
                     Room_5(appstate: $appstate)
                 }label: {
-                    Text("goto 5[update]")
+                    Text("go to bedroom a")
                 }
                 NavigationLink{
                     Room_6(appstate: $appstate)
                 }label: {
-                    Text("goto 6[update]")
+                    Text("go to bathroom")
                 }
                 Stepper("top: \(fromtop)",value: $fromtop)
                 Stepper("left: \(fromleft)", value: $fromleft)
@@ -38,7 +38,7 @@ struct Room_2: View {
                 
                 
             }
-            .alert(Text(alertc ? "The bookshelf flips around, bringing you to room 4":"Nothing happens"), isPresented: $alert){
+            .alert(Text(alertc ? "The bookshelf flips around, bringing you to a secret room":"Nothing happens"), isPresented: $alert){
                 
                     
                 if(alertc){

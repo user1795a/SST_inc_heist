@@ -19,14 +19,14 @@ struct Room_8: View {
                     Text("go to bedroom 2")
                 }
             }else{
-                Text("The safe contains (puzzle2mechanic)")
+                Text("The safe contains something, but you can't quite make it out")
                 NavigationLink{
                     Puzzle_2(appstate: $appstate)
                 }label:{
                     Text("Investigate")
                 }
             }
-            Text("Across the room, you see ***(=room4)")
+            Text("You see the area behind the bookshelf, but it it blocked by a piece of glass")
         }
     }
 }
