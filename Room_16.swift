@@ -12,18 +12,19 @@ struct Room_16: View {
     var body: some View {
         NavigationStack{
             VStack{
-                Text("go to room 17[update]")
                 if(appstate.solvedPuzzles.contains(6)){
+                   Text("The door to the other bedroom is locked")
                     NavigationLink{
                         Puzzle_6(appstate: $appstate)
                     }label: {
                         Text("attempt puzzle")
                     }
                 }else{
+                    Text("The door to the other bedroom is no longer locked")
                     NavigationLink{
                         Room_4(appstate: $appstate)
                     }label: {
-                        Text("goto 4")
+                        Text("goto 17")
                     }
                 }
             }
