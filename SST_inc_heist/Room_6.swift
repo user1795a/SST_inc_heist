@@ -16,7 +16,7 @@ struct Room_6: View {
                     NavigationLink{
                         Puzzle_1(appstate: $appstate)
                     }label: {
-                        Text("Door is locked.")
+                        Text("Door is locked. click here to lockpick")
                     }
                 }
                 Text("through a hole in the wall, you can see a box. ")
